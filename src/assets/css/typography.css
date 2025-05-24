@@ -1,5 +1,12 @@
-h1, h2, h3, h4 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+    @apply tracking-tight uppercase;
     font-family: var(--font-heading);
 }
 
-h1 { @apply text-7xl font-extrabold tracking-tight uppercase; }
+h1, .h1 { @apply text-9xl font-extrabold ; }
+h2, .h2 { @apply text-6xl font-bold; }
+h3, .h3 { @apply text-5xl font-semibold; }
+h4, .h4 { @apply text-4xl font-semibold; }

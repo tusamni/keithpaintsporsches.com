@@ -2,6 +2,7 @@
 import "/src/assets/css/_global.css";
 
 import { Font } from 'astro:assets';
+import Container from "@/components/content/Container";
 ---
 
 <html lang="en">
@@ -15,7 +16,16 @@ import { Font } from 'astro:assets';
 		<Font cssVariable='--font-heading' preload />
 	</head>
 
-	<body>
+	<body class="bg-black text-white p-6">
+		<div class="grid grid-cols-2">
+			<div class="h4">KPP</div>
+			<h1>
+				Keith<br />
+				Paints</br />
+				Porsches
+			</h1>
+		</div>
+
 		<slot />
 	</body>
 </html>
