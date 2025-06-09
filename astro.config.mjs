@@ -7,7 +7,8 @@ export default defineConfig({
     experimental: {
         fonts: [{
             provider: fontProviders.google(),
-            name: "Host Grotesk",
+            name: "Inter",
+            weights: ["300 900"],
             cssVariable: "--font-heading"
         }]
     },

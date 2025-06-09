@@ -1,3 +1,19 @@
 @import "tailwindcss";
 @import "./typography";
 
+@theme inline {
+    --font-heading: var(--font-heading), "sans-serif";
+
+    @keyframes pulse {
+        0%, 100% {
+            background-color: pink;
+        }
+        50% {
+            background-color: blue;
+        }
+    }
+}
+
+.is-pinned { 
+    @apply bg-neutral-500/20 transition-all duration-300 backdrop-blur-xl border-neutral-600
+}

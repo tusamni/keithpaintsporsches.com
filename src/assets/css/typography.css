@@ -2,11 +2,11 @@ h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4 {
-    @apply tracking-tight uppercase;
+    @apply -tracking-[0.06em] uppercase leading-32;
     font-family: var(--font-heading);
 }
 
-h1, .h1 { @apply text-9xl font-extrabold ; }
-h2, .h2 { @apply text-6xl font-bold; }
-h3, .h3 { @apply text-5xl font-semibold; }
-h4, .h4 { @apply text-4xl font-semibold; }
+h1, .h1 { @apply text-[9em] font-bold ; }
+h2, .h2 { @apply text-8xl font-bold; }
+h3, .h3 { @apply text-6xl font-semibold; }
+h4, .h4 { @apply text-5xl font-semibold; }
