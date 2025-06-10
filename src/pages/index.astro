@@ -1,57 +1,203 @@
 ---
-import MainLayout from "@/layouts/MainLayout"
+import MainLayout from "@/layouts/MainLayout";
+import "swiper/css";
 
-import Container from "@/components/content/Container"
-import Section from "@/components/content/Section"
+import Caption from "@/components/images/Caption";
+import Container from "@/components/content/Container";
+import Section from "@/components/content/Section";
 ---
 
 <MainLayout>
-    <div class="relative">
-        <div class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-50 blur-3xl" />
-        <div class="absolute top-25 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl" />
-        <div class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl" />
-        
-        <Section>
-            <Container>
-                <div class="mt-48 mb-12">
-                    <div class="space-y-16">
-                        <h1>
-                            Keith<br />
-                            Paints</br />
-                            Porsches
-                        </h1>
-                    </div>
-                </div>
-            </Container>
+	<div class="relative">
+		<div
+			class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-50 blur-3xl"
+		>
+		</div>
+		<div
+			class="absolute top-25 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"
+		>
+		</div>
+		<div
+			class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"
+		>
+		</div>
 
-            <Container size="large">
-                <div class="relative flex justify-end items-end mb-6">
-                    <img src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg" class="rounded" />
-                    
-                    <div class="absolute">
-                            <div class="flex items-center not-odd:mt-3 gap-x-2 text-base antialiased bg-black rounded-t py-4 px-6">
-                                <div class="font-semibold tracking-wide uppercase">1999 Porsche 911</div>
-                                <div class="text-neutral-500">//</div>
-                                <div class="text-neutral-300">Raspberry Glasurit More Paint Lingo</div>
-                            </div>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-5 gap-6">
-                    <img src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg" class="rounded" />
-                    <img src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg" class="rounded" />
-                    <img src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg" class="rounded" />
-                    <img src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg" class="rounded" />
-                    <img src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg" class="rounded" />
-                </div>
-            </Container>
+		<Section>
+			<Container>
+				<div class="mt-48 mb-12">
+					<div class="space-y-16">
+						<h1>
+							Keith<br />
+							Paints<br />
+							Porsches
+						</h1>
+					</div>
+				</div>
+			</Container>
 
-            <Container>
-                <div class="mb-32">
-                    <h2>Hey there, I'm Keith.</h2>
-                    <p class="text-3xl w-1/2">I'm a painter living in Austin, TX painting the world's best Porsches. I only shoot with Glasurit, don't bother asking for anything else.</p>
-                </div>
-            </Container>
-        </Section>
-    </div>
+			<Container size="large">
+				<div class="mb-6">
+					<div class="swiper swiper-image">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img
+									src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
+									class="rounded"
+								/>
+
+								<Caption />
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
+									class="rounded"
+								/>
+
+								<Caption />
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
+									class="rounded"
+								/>
+
+								<Caption />
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
+									class="rounded"
+								/>
+
+								<Caption />
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
+									class="rounded"
+								/>
+
+								<Caption />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper swiper-thumbs">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide hover:cursor-pointer">
+							<img
+								src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
+								class="rounded"
+							/>
+						</div>
+						<div class="swiper-slide">
+							<img
+								src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
+								class="rounded"
+							/>
+						</div>
+						<div class="swiper-slide">
+							<img
+								src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
+								class="rounded"
+							/>
+						</div>
+						<div class="swiper-slide">
+							<img
+								src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
+								class="rounded"
+							/>
+						</div>
+						<div class="swiper-slide">
+							<img
+								src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
+								class="rounded"
+							/>
+						</div>
+					</div>
+
+					<div class="flex justify-center items-center mt-6">
+						<div class="swiper-button-prev">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+								></path>
+							</svg>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button-next">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+								></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</Container>
+
+			<Container>
+				<div class="mb-32">
+					<h2>Hey there, I'm Keith.</h2>
+					<p class="text-3xl w-1/2">
+						I'm a painter living in Austin, TX painting the world's
+						best Porsches. I only shoot with Glasurit, don't bother
+						asking for anything else.
+					</p>
+				</div>
+			</Container>
+		</Section>
+	</div>
+
+	<script>
+		import Swiper from "swiper/bundle";
+
+		const swiperThumbs = new Swiper(".swiper-thumbs", {
+			loop: true,
+			spaceBetween: 25,
+			slidesPerView: 4,
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+		const swiperImage = new Swiper(".swiper-image", {
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: true,
+			},
+			loop: true,
+			spaceBetween: 0,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			thumbs: {
+				swiper: swiperThumbs,
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				renderCustom: function (swiper, current, total) {
+					return current + " of " + total;
+				},
+			},
+		});
+	</script>
 </MainLayout>
