@@ -5,6 +5,7 @@ import { Font } from "astro:assets";
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/content/Container";
 import Footer from "@/components/content/Footer";
+import Logo from "@/components/LogoSlash";
 import MainNavigation from "@/components/content/navigation/MainNavigation";
 import Section from "@/components/content/Section";
 ---
@@ -37,14 +38,17 @@ import Section from "@/components/content/Section";
 
 			<Section>
 				<div
-					class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-700"
+					class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-500"
 				>
 					<Container>
 						<div class="flex justify-between items-center">
-							<div
-								class="font-semibold text-xl font-heading antialiased"
-							>
-								KPP
+							<div class="flex items-center gap-1">
+								<Logo classes="w-8" />
+								<div
+									class="font-semibold text-xl font-heading antialiased"
+								>
+									KPP
+								</div>
 							</div>
 
 							<MainNavigation />

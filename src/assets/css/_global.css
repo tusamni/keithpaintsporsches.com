@@ -6,7 +6,7 @@
 @import "./typography";
 
 .navbar {
-    @apply duration-300 transition-all ease-in-out;
+    @apply duration-300 transition-all ease-in-out bg-neutral-500/40;
 }
 .is-pinned { 
     @apply bg-neutral-500/20 transition-all duration-300 backdrop-blur-xl border-neutral-500 ease-in-out;
