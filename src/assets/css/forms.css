@@ -1,0 +1,2 @@
+input, textarea { @apply flex items-center border-0 rounded w-full leading-tight !ring-1 !ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-amber-400 text-black p-4; }
+label { @apply text-white font-medium uppercase text-lg; }

@@ -1,18 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@import "./buttons";
+@import "./forms";
 @import "./typography";
-
-@theme inline {
-    --font-heading: var(--font-heading), "sans-serif";
-
-    @keyframes pulse {
-        0%, 100% {
-            background-color: pink;
-        }
-        50% {
-            background-color: blue;
-        }
-    }
-}
 
 .navbar {
     @apply duration-300 transition-all ease-in-out;

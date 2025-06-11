@@ -1,0 +1,39 @@
+.button {
+	@apply transition duration-300 inline-flex items-center justify-center font-medium rounded px-5 py-3;
+
+	&.button-primary {
+		@apply text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-4 focus:ring-sky-300;
+
+		&.button-inverse {
+			@apply text-slate-900 bg-white hover:bg-slate-100;
+		}
+	}
+
+	&.button-ghost {
+		@apply text-slate-900 bg-white border border-slate-300 focus:outline-none hover:bg-slate-100 focus:ring-4 focus:ring-slate-100;
+
+		&.button-inverse {
+			@apply border-slate-100 text-slate-100;
+		}
+	}
+}
+
+.pill {
+	@apply inline-flex items-center rounded-xl px-4 py-2 text-xs font-medium uppercase;
+
+	&.pill-primary {
+		@apply bg-white text-slate-800;
+	}
+
+	&.pill-secondary {
+		@apply bg-slate-900 text-slate-50;
+	}
+
+	&.pill-ghost {
+		@apply border border-slate-900 text-slate-900;
+	}
+
+	&.pill-large {
+		@apply px-4 py-2.5;
+	}
+}

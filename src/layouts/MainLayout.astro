@@ -1,10 +1,12 @@
 ---
 import "/src/assets/css/_global.css";
 
-import { Font } from 'astro:assets';
+import { Font } from "astro:assets";
+import ContactForm from "@/components/ContactForm";
 import Container from "@/components/content/Container";
 import Footer from "@/components/content/Footer";
 import MainNavigation from "@/components/content/navigation/MainNavigation";
+import Section from "@/components/content/Section";
 ---
 
 <html lang="en">
@@ -15,32 +17,60 @@ import MainNavigation from "@/components/content/navigation/MainNavigation";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 
-		<Font cssVariable='--font-heading' preload />
+		<Font cssVariable="--font-heading" preload />
 	</head>
 
 	<body class="bg-black text-white">
-		<div class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-700">
-			<Container>
-				<div class="flex justify-between items-center">
-					<div class="font-semibold text-xl font-heading antialiased">KPP</div>
-					
-					<MainNavigation />
+		<div class="relative">
+			<div
+				class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-50 blur-3xl"
+			>
+			</div>
+			<div
+				class="absolute top-25 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"
+			>
+			</div>
+			<div
+				class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"
+			>
+			</div>
+
+			<Section>
+				<div
+					class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-700"
+				>
+					<Container>
+						<div class="flex justify-between items-center">
+							<div
+								class="font-semibold text-xl font-heading antialiased"
+							>
+								KPP
+							</div>
+
+							<MainNavigation />
+						</div>
+					</Container>
 				</div>
-			</Container>
+
+				<slot />
+
+				<ContactForm />
+				<Footer />
+			</Section>
+
+			<script is:inline>
+				const el = document.querySelector(".navbar");
+				const observer = new IntersectionObserver(
+					([e]) =>
+						e.target.classList.toggle(
+							"is-pinned",
+							e.intersectionRatio < 1,
+						),
+					{ threshold: [1] },
+				);
+
+				observer.observe(el);
+			</script>
 		</div>
-
-		<slot />
-
-		<Footer />
-
-		<script is:inline>
-			const el = document.querySelector('.navbar');
-			const observer = new IntersectionObserver( 
-			([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-			{ threshold: [1] }
-			);
-
-			observer.observe(el);
-		</script>
 	</body>
 </html>
