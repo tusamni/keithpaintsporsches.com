@@ -10,6 +10,11 @@ export default defineConfig({
             name: "Inter",
             weights: ["300 900"],
             cssVariable: "--font-heading"
+        }, {
+            provider: fontProviders.google(),
+            name: "Manrope",
+            weights: ["200 800"],
+            cssVariable: "--font-manrope"
         }]
     },
     vite: {

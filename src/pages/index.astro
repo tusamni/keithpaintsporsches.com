@@ -11,137 +11,121 @@ import Section from "@/components/content/Section";
 <MainLayout>
 	<Section>
 		<Container>
-			<div class="space-y-16">
+			<div class="space-y-12">
 				<h1>
 					Keith<br />
 					Paints<br />
 					Porsches
 				</h1>
-			</div>
-		</Container>
 
-		<Container size="large">
-			<div class="mb-6">
-				<div class="swiper swiper-image">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<img
-								src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
-								class="rounded"
-							/>
+				<hr class="max-w-16" />
 
-							<Caption />
+				<div class="flex space-y-4 max-w-6xl gap-8">
+					<div class="w-156 space-y-4">
+						<div class="text-5xl font-bold tracking-tighter">
+							Hey there! 👋 I'm Keith.
 						</div>
-						<div class="swiper-slide">
-							<img
-								src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
-								class="rounded"
-							/>
 
-							<Caption />
-						</div>
-						<div class="swiper-slide">
-							<img
-								src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
-								class="rounded"
-							/>
-
-							<Caption />
-						</div>
-						<div class="swiper-slide">
-							<img
-								src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
-								class="rounded"
-							/>
-
-							<Caption />
-						</div>
-						<div class="swiper-slide">
-							<img
-								src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
-								class="rounded"
-							/>
-
-							<Caption />
+						<div class="text-xl text-stone-200">
+							I'm an independent Porsche painter operating outside
+							of Austin, TX dedicated to delivering
+							concours-quality finishes that preserve the
+							aesthetic and financial value of your vehicle.
 						</div>
 					</div>
 				</div>
 			</div>
+		</Container>
 
-			<div class="swiper swiper-thumbs">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide hover:cursor-pointer">
+		<img
+			src="https://imgix.cosmicjs.com/f06bc7a0-ca38-11f0-9c76-997eeae9b341-keith-young-005.jpg"
+			class="w-full h-full object-cover"
+		/>
+
+		<Container>
+			<div class="flex gap-20">
+				<div class="text-balance">
+					<h2>Porsche Restoration Services</h2>
+				</div>
+
+				<div class="col-span-9">
+					<div class="grid grid-cols-2 gap-8">
+						{
+							[...Array(4)].map((_, index) => {
+								return (
+									<div class="space-y-3">
+										<h3 class="h5 text-balance">
+											Full Restoration &amp; Repaint
+										</h3>
+
+										<div class="text-stone-200 text-lg">
+											Complete repainting of damaged or
+											scratched body panels (e.g., bumper,
+											door, fender) using factory-approved
+											techniques to ensure a seamless
+											blend and perfect color match with
+											the rest of the vehicle.
+										</div>
+									</div>
+								);
+							})
+						}
+					</div>
+				</div>
+			</div>
+		</Container>
+
+		<div class="space-y-16">
+			<Container>
+				<div>
+					<h2>Finished Restorations</h2>
+				</div>
+			</Container>
+
+			<Container size="large">
+				<div class="grid grid-cols-12 gap-6">
+					<div class="col-span-12 relative">
 						<img
 							src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
-							class="rounded-t"
+							class="rounded"
 						/>
+
+						<Caption />
 					</div>
-					<div class="swiper-slide">
+					<div class="col-span-6 relative">
 						<img
 							src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
-							class="rounded-t"
+							class="rounded"
 						/>
+
+						<Caption />
 					</div>
-					<div class="swiper-slide">
+					<div class="col-span-6 relative">
 						<img
 							src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
-							class="rounded-t"
+							class="rounded"
 						/>
+
+						<Caption />
 					</div>
-					<div class="swiper-slide">
+					<div class="col-span-8 relative">
 						<img
 							src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
-							class="rounded-t"
+							class="rounded"
 						/>
+
+						<Caption />
 					</div>
-					<div class="swiper-slide">
+					<div class="col-span-4 relative">
 						<img
 							src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
-							class="rounded-t"
+							class="rounded w-full h-full object-cover"
 						/>
+
+						<Caption />
 					</div>
 				</div>
-			</div>
-
-			<div class="flex justify-center items-center mt-12 gap-x-9">
-				<PaintSprayer classes="swiper-button-prev" />
-				<div class="swiper-pagination text-lg font-medium uppercase" />
-				<PaintSprayer classes="swiper-button-next" flip={true} />
-			</div>
-		</Container>
+			</Container>
+		</div>
 	</Section>
 </MainLayout>
-
-<script>
-	import Swiper from "swiper/bundle";
-
-	const swiperThumbs = new Swiper(".swiper-thumbs", {
-		loop: true,
-		spaceBetween: 25,
-		slidesPerView: 4,
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	const swiperImage = new Swiper(".swiper-image", {
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: true,
-		},
-		loop: true,
-		spaceBetween: 0,
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-		thumbs: {
-			swiper: swiperThumbs,
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			type: "custom",
-			renderCustom: function (swiper, current, total) {
-				return current + " of " + total;
-			},
-		},
-	});
-</script>
