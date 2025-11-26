@@ -6,8 +6,8 @@ h4, .h4 {
     font-family: var(--font-heading);
 }
 
-h1, .h1 { @apply text-[7em] font-bold leading-24; }
-h2, .h2 { @apply text-7xl font-bold leading-18; }
-h3, .h3 { @apply text-6xl font-semibold leading-16; }
-h4, .h4 { @apply text-5xl font-semibold; }
-h5, .h5 { @apply text-4xl font-medium leading-10; }
+h1, .h1 { @apply text-6xl lg:text-[7em] font-bold leading-14 lg:leading-24; }
+h2, .h2 { @apply text-5xl lg:text-6xl font-bold leading-12 lg:leading-18; }
+h3, .h3 { @apply text-4xl lg:text-5xl font-semibold leading-10 lg:leading-16; }
+h4, .h4 { @apply text-3xl lg:text-4xl font-semibold; }
+h5, .h5 { @apply text-2xl lg:text-3xl font-medium leading-10; }
