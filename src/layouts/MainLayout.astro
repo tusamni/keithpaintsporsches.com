@@ -1,11 +1,12 @@
 ---
 import "/src/assets/css/_global.css";
+import "lightgallery/css/lightgallery-bundle.css";
 
 import { Font } from "astro:assets";
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/content/Container";
 import Footer from "@/components/content/Footer";
-import Logo from "@/components/LogoSlash";
+import Logo from "@/components/Logo";
 import MainNavigation from "@/components/content/navigation/MainNavigation";
 import Section from "@/components/content/Section";
 ---
@@ -23,59 +24,91 @@ import Section from "@/components/content/Section";
 	</head>
 
 	<body class="bg-black text-white">
-		<div class="relative w-full">
+		<div class="relative">
 			<div
-				class="absolute -top-100 right-50 size-[150vw] lg:size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-30 blur-3xl"
+				class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-30 blur-3xl"
 			>
 			</div>
 			<div
-				class="absolute top-50 right-0 size-[150vw] lg:size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"
+				class="absolute top-50 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"
 			>
 			</div>
 			<div
-				class="absolute -top-100 right-0 size-[150vw] lg:size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"
+				class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"
 			>
 			</div>
-
-			<Section>
-				<div
-					class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-500"
-				>
-					<Container>
-						<div class="flex justify-between items-center">
-							<div class="flex items-center gap-1">
-								<Logo classes="w-8" />
-								<div
-									class="font-semibold text-xl font-heading antialiased"
-								>
-									KPP
-								</div>
-							</div>
-
-							<MainNavigation />
-						</div>
-					</Container>
-				</div>
-
-				<slot />
-
-				<ContactForm />
-				<Footer />
-			</Section>
-
-			<script is:inline>
-				const el = document.querySelector(".navbar");
-				const observer = new IntersectionObserver(
-					([e]) =>
-						e.target.classList.toggle(
-							"is-pinned",
-							e.intersectionRatio < 1,
-						),
-					{ threshold: [1] },
-				);
-
-				observer.observe(el);
-			</script>
 		</div>
+
+		<Section>
+			<div
+				class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-500"
+			>
+				<Container mobilePadding={false}>
+					<div class="flex justify-between items-center">
+						<Logo />
+
+						<MainNavigation />
+					</div>
+				</Container>
+			</div>
+
+			<slot />
+
+			{
+				!Astro.url.pathname.includes("contact") && (
+					<Container>
+						<ContactForm />
+					</Container>
+				)
+			}
+
+			<Footer />
+		</Section>
+
+		<script is:inline>
+			const el = document.querySelector(".navbar");
+			const observer = new IntersectionObserver(
+				([e]) =>
+					e.target.classList.toggle(
+						"is-pinned",
+						e.intersectionRatio < 1,
+					),
+				{ threshold: [1] },
+			);
+
+			observer.observe(el);
+		</script>
+
+		<script>
+			// log visitdata
+			import * as visitData from "visitdata";
+			visitData.setOption("url_parameters", {
+				medium: ["utm_medium"],
+				source: ["utm_source"],
+				campaign: ["utm_campaign"],
+				gclid: ["gclid"],
+			});
+			document.getElementById("marketing").value = JSON.stringify(
+				visitData.get(),
+			);
+
+			import lightGallery from "lightgallery";
+			import lgThumbnail from "lightgallery/plugins/thumbnail";
+			import lgVideo from "lightgallery/plugins/video";
+			import lgZoom from "lightgallery/plugins/zoom";
+
+			lightGallery(document.body, {
+				selector: ".gallery", // This tells LG to pick <a> from ALL .gallery on page
+				plugins: [lgThumbnail, lgZoom],
+				thumbnail: true,
+				exThumbImage: "data-thumb",
+				showCloseIcon: true,
+			});
+
+			lightGallery(document.body, {
+				selector: ".video",
+				plugins: [lgVideo],
+			});
+		</script>
 	</body>
 </html>

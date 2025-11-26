@@ -1,10 +1,8 @@
 ---
 import MainLayout from "@/layouts/MainLayout";
-import "swiper/css";
 
-import Caption from "@/components/images/Caption";
 import Container from "@/components/content/Container";
-import PaintSprayer from "@/components/icons/PaintSprayer";
+import Image from "@/components/images/Image";
 import Section from "@/components/content/Section";
 ---
 
@@ -21,8 +19,10 @@ import Section from "@/components/content/Section";
 				<hr class="max-w-16" />
 
 				<div class="flex space-y-4 max-w-6xl gap-8">
-					<div class="w-156 space-y-4">
-						<div class="text-5xl font-bold tracking-tighter">
+					<div class="w-156 space-y-6">
+						<div
+							class="text-balance text-4xl lg:text-5xl font-bold tracking-tighter"
+						>
 							Hey there! 👋 I'm Keith.
 						</div>
 
@@ -43,9 +43,8 @@ import Section from "@/components/content/Section";
 			</div>
 		</Container>
 
-		<img
-			src="https://imgix.cosmicjs.com/f06bc7a0-ca38-11f0-9c76-997eeae9b341-keith-young-005.jpg"
-			class="w-full h-full object-cover"
+		<Image
+			src="https://cdn.cosmicjs.com/f06bc7a0-ca38-11f0-9c76-997eeae9b341-keith-young-005.jpg"
 		/>
 
 		<Container>
@@ -54,13 +53,13 @@ import Section from "@/components/content/Section";
 					<h2 class="text-balance">Porsche Restoration Services</h2>
 					<a
 						href="/contact/"
-						class="w-fit button-primary button text-base"
+						class="w-fit button-ghost button-inverse button text-base"
 						>Contact Me!</a
 					>
 				</div>
 
 				<div>
-					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 						{
 							[...Array(4)].map((_, index) => {
 								return (
@@ -96,44 +95,31 @@ import Section from "@/components/content/Section";
 			<Container size="large">
 				<div class="grid grid-cols-12 gap-6">
 					<div class="col-span-12 relative">
-						<img
-							src="https://imgix.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
-							class="rounded"
+						<Image
+							src="https://cdn.cosmicjs.com/02000da0-4555-11f0-a5a4-3f778801f7fa-composite02.jpg"
 						/>
-
-						<Caption />
 					</div>
 					<div class="col-span-12 lg:col-span-6 relative">
-						<img
-							src="https://imgix.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
-							class="rounded"
+						<Image
+							src="https://cdn.cosmicjs.com/df3b3d80-45a4-11f0-b482-850637e71c1a-silver-porsche-911_002.jpg"
 						/>
-
-						<Caption />
 					</div>
 					<div class="col-span-12 lg:col-span-6 relative">
-						<img
-							src="https://imgix.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
-							class="rounded"
+						<Image
+							src="https://cdn.cosmicjs.com/de29f490-45a4-11f0-b482-850637e71c1a-2024-06-06-italian-911s_007.jpg"
 						/>
-
-						<Caption />
 					</div>
 					<div class="col-span-12 lg:col-span-8 relative">
-						<img
-							src="https://imgix.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
-							class="rounded"
+						<Image
+							src="https://cdn.cosmicjs.com/d85bdc50-45a3-11f0-b482-850637e71c1a-turbo_025.jpg"
 						/>
-
-						<Caption />
 					</div>
 					<div class="col-span-12 lg:col-span-4 relative">
-						<img
-							src="https://imgix.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
-							class="rounded w-full h-full object-cover"
+						<Image
+							src="https://cdn.cosmicjs.com/7b6783e0-45a4-11f0-b482-850637e71c1a-yellow-911s-targa_050.jpg"
+							figureClass="w-full h-full"
+							class="w-full h-full object-cover"
 						/>
-
-						<Caption />
 					</div>
 				</div>
 			</Container>

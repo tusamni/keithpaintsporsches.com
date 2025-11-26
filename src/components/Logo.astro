@@ -1,36 +1,18 @@
 ---
+import LogoSlash from "@/components/LogoSlash";
+
 // props
 export interface Props {
-    classes?: string;
+    logoWidth?: string;
+    textSize?: string;
 }
-const { classes } = Astro.props;
+const { logoWidth = "w-8", textSize = "text-xl" } = Astro.props;
 ---
 
-<svg
-    viewBox="0 0 527 229"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class:list={[classes]}
->
-    <circle
-        cx="115"
-        cy="114.5"
-        r="111.5"
-        fill="#EBD698"
-        stroke="white"
-        stroke-width="6"></circle>
-    <circle
-        cx="263.5"
-        cy="114.5"
-        r="111.5"
-        fill="black"
-        stroke="white"
-        stroke-width="6"></circle>
-    <circle
-        cx="412.5"
-        cy="114.5"
-        r="111.5"
-        fill="#B12B28"
-        stroke="white"
-        stroke-width="6"></circle>
-</svg>
+<a href="/" class="w-fit flex items-center gap-1 pl-6 sm:pl-0">
+    <LogoSlash classes={logoWidth} />
+
+    <div class:list={["font-semibold font-heading antialiased", textSize]}>
+        KPP
+    </div>
+</a>

@@ -5,6 +5,8 @@
 @import "./forms";
 @import "./typography";
 
+body, html { overflow-x: hidden;}
+
 body {
     font-family: var(--font-manrope);
     @apply tracking-wide
