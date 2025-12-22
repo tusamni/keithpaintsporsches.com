@@ -19,30 +19,26 @@ import Section from "@/components/content/Section";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="Keith Paints Porsches" />
+		<link rel="manifest" href="/site.webmanifest" />
+
 		<Font cssVariable="--font-heading" preload />
 		<Font cssVariable="--font-manrope" preload />
 	</head>
 
 	<body class="bg-black text-white">
 		<div class="relative">
-			<div
-				class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-30 blur-3xl"
-			>
-			</div>
-			<div
-				class="absolute top-50 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"
-			>
-			</div>
-			<div
-				class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"
-			>
-			</div>
+			<div class="absolute -top-100 left-0 size-300 rounded-full bg-radial from-pink-500/20 from-40% to-pink-500/10 -z-30 blur-3xl"></div>
+			<div class="absolute top-50 right-0 size-300 rounded-full bg-radial from-sky-500/20 from-40% to-sky-500/10 -z-50 blur-3xl"></div>
+			<div class="absolute -top-100 right-0 size-300 rounded-full bg-radial from-emerald-500/20 from-40% to-emerald-500/10 -z-50 blur-3xl"></div>
 		</div>
 
 		<Section>
-			<div
-				class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-500"
-			>
+			<div class="navbar sticky w-full h-auto top-[-1px] z-50 border-b border-neutral-500">
 				<Container mobilePadding={false}>
 					<div class="flex justify-between items-center">
 						<Logo />
@@ -67,14 +63,7 @@ import Section from "@/components/content/Section";
 
 		<script is:inline>
 			const el = document.querySelector(".navbar");
-			const observer = new IntersectionObserver(
-				([e]) =>
-					e.target.classList.toggle(
-						"is-pinned",
-						e.intersectionRatio < 1,
-					),
-				{ threshold: [1] },
-			);
+			const observer = new IntersectionObserver(([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1), { threshold: [1] });
 
 			observer.observe(el);
 		</script>
@@ -88,9 +77,7 @@ import Section from "@/components/content/Section";
 				campaign: ["utm_campaign"],
 				gclid: ["gclid"],
 			});
-			document.getElementById("marketing").value = JSON.stringify(
-				visitData.get(),
-			);
+			document.getElementById("marketing").value = JSON.stringify(visitData.get());
 
 			import lightGallery from "lightgallery";
 			import lgThumbnail from "lightgallery/plugins/thumbnail";
